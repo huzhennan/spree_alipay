@@ -12,7 +12,7 @@ module Spree
       #logger.debug "all before filers:"+all_filters.map(&:filter).inspect
       return unless @order.next_step_complete?
       #in confirm step, only param is  {"state"=>"confirm"}
-      payment_method = get_payment_method_by_params(  )
+      payment_method = get_payment_method_by_params()
       if payment_method.kind_of?( @alipay_base_class )
         handle_billing_integration
       end
