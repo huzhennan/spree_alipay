@@ -51,8 +51,9 @@ module Spree
     end
 
     def get_payment_method_by_params
-      payment_method_id = params[:order].try(:[],:payments_attributes).try(:first).try(:[],:payment_method_id).to_i
-      Spree::PaymentMethod.find_by_id(payment_method_id)
+      # payment_method_id = params[:order].try(:[],:payments_attributes).try(:first).try(:[],:payment_method_id).to_i
+      # Spree::PaymentMethod.find_by_id(payment_method_id)
+      @order.payments.last.payment_method
     end
 
     def get_payment_method_by_order( order )
