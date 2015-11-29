@@ -8,3 +8,5 @@ db/samples/payment_method.rb
 coverage
 spec/dummy2-2-stable
 .env
+
+.idea/
